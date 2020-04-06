@@ -1,0 +1,12 @@
+server:
+  port: 8761
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+  server:
+    eviction-interval-timer-in-ms: 60000
+#    register-with-eureka: false
+spring:
+  application:
+    name: eureka-server

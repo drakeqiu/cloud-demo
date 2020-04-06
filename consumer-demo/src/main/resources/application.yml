@@ -1,0 +1,39 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: consumer-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+#    fetch-remote-regions-registry: 30
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+
+#user-service:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+logging:
+  level:
+    com: info
+    org: info
+feign:
+  hystrix:
+    enabled: true
+ribbon:
+  ConnectionTimeOut: 1000
+  ReadTimeOut: 1000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+    user-service:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000

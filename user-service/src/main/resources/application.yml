@@ -1,0 +1,25 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/yun6
+    username: root
+    password: 123456
+mybatis:
+  type-aliases-package: com.jarvis.user.domain
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+#    lease-renewal-interval-in-seconds: 30
+#    lease-expiration-duration-in-seconds: 90
+logging:
+  level:
+    com: debug
+    org: debug
+    cn: debug
